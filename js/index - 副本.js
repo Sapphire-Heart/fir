@@ -182,41 +182,41 @@ window.onload=function(){
 	}
 
     // 悔棋
-    // huiqi.onclick=function(){
-    //     huaqipan();
-    //     var colorarr=[];
-    //     var zuobiaoarr=[];
-    //     data=JSON.parse(localStorage.data);
-    //     if(JSON.stringify(data)==0){
-    //         huiqi.onclick=null;
-    //         return;
-    //     }
-    //     for(var i in data){
-    //         zuobiaoarr.push(i);
-    //         colorarr.push(data[i]);   
-    //     }
-    //     colorarr.pop();
-    //     zuobiaoarr.pop();
-    //     for(var i=0;i<colorarr.length;i++){
-    //         var x=zuobiaoarr[i].split("_")[0];
-    //         var y=zuobiaoarr[i].split("_")[1];
-    //         luozi(x,y,(colorarr[i]=='black')?true:false);
-    //         if(((colorarr[i]=='black')?true:false)){
-    //             localStorage.x="1";
-    //         }else{
-    //             localStorage.removeItem("x");
-    //         } 
-    //     }
-    //     //更新localStorage
-    //     data={};
-    //     for(var i=0;i<zuobiaoarr.length;i++){
-    //         var x=zuobiaoarr[i].split("_")[0];
-    //         var y=zuobiaoarr[i].split("_")[1];
-    //         data[x+'_'+y]=colorarr[i];
-    //     }
-    //     localStorage.data=JSON.stringify(data);
-    //     location.reload();
-    // }
+    huiqi.onclick=function(){
+        huaqipan();
+        var colorarr=[];
+        var zuobiaoarr=[];
+        data=JSON.parse(localStorage.data);
+        if(JSON.stringify(data)==0){
+            huiqi.onclick=null;
+            return;
+        }
+        for(var i in data){
+            zuobiaoarr.push(i);
+            colorarr.push(data[i]);   
+        }
+        colorarr.pop();
+        zuobiaoarr.pop();
+        for(var i=0;i<colorarr.length;i++){
+            var x=zuobiaoarr[i].split("_")[0];
+            var y=zuobiaoarr[i].split("_")[1];
+            luozi(x,y,(colorarr[i]=='black')?true:false);
+            if(((colorarr[i]=='black')?true:false)){
+                localStorage.x="1";
+            }else{
+                localStorage.removeItem("x");
+            } 
+        }
+        //更新localStorage
+        data={};
+        for(var i=0;i<zuobiaoarr.length;i++){
+            var x=zuobiaoarr[i].split("_")[0];
+            var y=zuobiaoarr[i].split("_")[1];
+            data[x+'_'+y]=colorarr[i];
+        }
+        localStorage.data=JSON.stringify(data);
+        location.reload();
+    }
 
 
 
